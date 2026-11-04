@@ -340,3 +340,23 @@ button, input, select { font: inherit; color: inherit; }
   cursor: pointer;
 }
 .comm-label.on { background: #2b3242; color: #fff; }
+
+/* Fountains: a drop, blue when working, grey when not */
+.pin-drop {
+  display: grid; place-items: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #0b8bd1;
+  box-shadow: 0 0 0 2px #fff, 0 2px 5px rgba(0, 0, 0, .3);
+}
+.pin-drop svg, .mark.drop svg { width: 11px; height: 14px; fill: #fff; }
+.pin-drop.off, .mark.drop.off { background: #8a919e; }
+.mark.drop {
+  width: 18px; height: 18px; margin-top: 0;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: #0b8bd1;
+}
+.mark.drop svg { width: 9px; height: 12px; }
+.pop-note { margin: -4px 0 6px; font-size: 13px; }
+.pop-small { margin: -2px 0 10px; font-size: 12px; color: var(--ink-soft); }

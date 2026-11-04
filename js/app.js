@@ -29,8 +29,13 @@
       byDistance: "ταξινόμηση κατά απόσταση",
       empty: "Κανένας τόπος δεν ταιριάζει στα φίλτρα.",
       reset: "Καθαρισμός φίλτρων",
-      cats: { square: "Πλατείες", landmark: "Τοπόσημα", monument: "Μνημεία", culture: "Χώροι πολιτισμού", green: "Πράσινο & ελεύθεροι χώροι" },
-      cat1: { square: "Πλατεία", landmark: "Τοπόσημο", monument: "Μνημείο", culture: "Χώρος πολιτισμού", green: "Χώρος πρασίνου" },
+      cats: { square: "Πλατείες", landmark: "Τοπόσημα", monument: "Μνημεία", culture: "Χώροι πολιτισμού", green: "Πράσινο & ελεύθεροι χώροι", fountain: "Σιντριβάνια" },
+      cat1: { square: "Πλατεία", landmark: "Τοπόσημο", monument: "Μνημείο", culture: "Χώρος πολιτισμού", green: "Χώρος πρασίνου", fountain: "Σιντριβάνι" },
+      fountainOn: "Σε λειτουργία",
+      fountainOff: "Εκτός λειτουργίας",
+      statusDt: "Κατάσταση",
+      checkedNote: (d) => `Κατάσταση σύμφωνα με τον Δήμο στις ${d.split("-").reverse().join("/")}.`,
+      fountainNo: "Αρ. πίδακα",
       venue: { museum: "Μουσείο", library: "Βιβλιοθήκη", theatre: "Θέατρο", centre: "Πολιτιστικό κέντρο", gallery: "Πινακοθήκη", cinema: "Κινηματογράφος" },
       address: "Διεύθυνση",
       operator: "Φορέας",
@@ -45,7 +50,7 @@
       aka: "και",
       langBtn: "EN",
       langAria: "Switch to English",
-      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a> (τοπωνυμία, χώροι πολιτισμού, δημοτικές κοινότητες, Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας ΦΕΚ 96Δ/2004). Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
+      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a> (τοπωνυμία, χώροι πολιτισμού, υδατοπίδακες, δημοτικές κοινότητες, Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας ΦΕΚ 96Δ/2004). Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
       about: 'Ανεξάρτητη εφαρμογή ανοιχτού κώδικα, όχι επίσημη εφαρμογή του Δήμου. Μέρος του <a href="https://athensapps.gr/">athensapps.gr</a>, κώδικας στο <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Τόποι της Αθήνας | Athens Places",
     },
@@ -75,8 +80,13 @@
       byDistance: "sorted by distance",
       empty: "No place matches these filters.",
       reset: "Clear filters",
-      cats: { square: "Squares", landmark: "Landmarks", monument: "Monuments", culture: "Cultural venues", green: "Green & open spaces" },
-      cat1: { square: "Square", landmark: "Landmark", monument: "Monument", culture: "Cultural venue", green: "Green space" },
+      cats: { square: "Squares", landmark: "Landmarks", monument: "Monuments", culture: "Cultural venues", green: "Green & open spaces", fountain: "Fountains" },
+      cat1: { square: "Square", landmark: "Landmark", monument: "Monument", culture: "Cultural venue", green: "Green space", fountain: "Fountain" },
+      fountainOn: "Working",
+      fountainOff: "Not working",
+      statusDt: "Status",
+      checkedNote: (d) => `Status as reported by the City on ${d.split("-").reverse().join("/")}.`,
+      fountainNo: "Fountain no.",
       venue: { museum: "Museum", library: "Library", theatre: "Theatre", centre: "Cultural centre", gallery: "Gallery", cinema: "Cinema" },
       address: "Address",
       operator: "Operator",
@@ -91,7 +101,7 @@
       aka: "aka",
       langBtn: "ΕΛ",
       langAria: "Αλλαγή σε ελληνικά",
-      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a> (toponymy, cultural venues, municipal communities, Historic Centre, Piraeus Street axis, Archaeology Sector ΦΕΚ 96Δ/2004). Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
+      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a> (toponymy, cultural venues, fountains, municipal communities, Historic Centre, Piraeus Street axis, Archaeology Sector ΦΕΚ 96Δ/2004). Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
       about: 'An independent open source app, not an official City of Athens app. Part of <a href="https://athensapps.gr/">athensapps.gr</a>, code on <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Athens Places | Τόποι της Αθήνας",
     },
@@ -101,9 +111,13 @@
     return `${n}${s}`;
   }
 
-  const CATS = ["square", "landmark", "monument", "culture", "green"];
+  const CATS = ["square", "landmark", "monument", "culture", "green", "fountain"];
+  // Categories that start switched off, so the map is not crowded by default
+  const OFF_BY_DEFAULT = ["fountain"];
+  const defaultCats = () => new Set(CATS.filter((c) => !OFF_BY_DEFAULT.includes(c)));
+  const DROP = '<svg viewBox="0 0 16 20" aria-hidden="true"><path d="M8 1.5C5.6 5 3 8.3 3 12a5 5 0 0 0 10 0c0-3.7-2.6-7-5-10.5z"/></svg>';
   const COLORS = {
-    square: "#2f6fd6", landmark: "#7d4cb8", monument: "#a3441f", culture: "#c0307a", green: "#2e7d4f",
+    square: "#2f6fd6", landmark: "#7d4cb8", monument: "#a3441f", culture: "#c0307a", green: "#2e7d4f", fountain: "#0b8bd1",
   };
 
   /* ---------- Small helpers ---------- */
@@ -129,7 +143,7 @@
   /* ---------- State ---------- */
   const params = new URLSearchParams(location.search);
   let lang = params.get("lang") === "en" || params.get("lang") === "el" ? params.get("lang") : (store.get("places-lang") || "el");
-  const state = { q: "", cats: new Set(CATS), area: "", me: null, current: null };
+  const state = { q: "", cats: defaultCats(), area: "", me: null, current: null };
   let places = [];
   const t = () => T[lang];
 
@@ -192,7 +206,7 @@
   const zoneStyle = (z, on) => ({
     color: z.color, weight: on ? 4.5 : 3, opacity: 1,
     dashArray: z.dash || null, lineCap: "round", lineJoin: "round",
-    fillColor: z.color, fillOpacity: on ? 0.16 : 0.07,
+    fillColor: z.color, fillOpacity: on ? 0.16 : 0.05,
   });
   const casingStyle = (on) => ({ color: "#fff", weight: on ? 9 : 7, opacity: 0.9, fill: false, interactive: false });
   const ZONE_DASH = { archaeology: "1 7" };
@@ -284,7 +298,12 @@
   function makeMarker(p) {
     const ll = [p.lat, p.lon];
     let m;
-    if (p.cat === "green" && p.green_no) {
+    if (p.cat === "fountain") {
+      m = L.marker(ll, {
+        icon: L.divIcon({ className: "", html: `<span class="pin-drop${p.active ? "" : " off"}">${DROP}</span>`, iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -10] }),
+        keyboard: false,
+      });
+    } else if (p.cat === "green" && p.green_no) {
       m = L.marker(ll, {
         icon: L.divIcon({ className: "", html: `<span class="pin-num">${p.green_no}</span>`, iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -10] }),
         keyboard: false,
@@ -317,6 +336,10 @@
     if (zs.length) rows.push([s.zoneDt, zs.map(zoneLabel).join(", ")]);
     if (p.green_no) rows.push([s.greenNo, p.green_no]);
     if (p.operator) rows.push([s.operator, p.operator]);
+    if (p.cat === "fountain") {
+      rows.unshift([s.statusDt, p.active ? s.fountainOn : s.fountainOff]);
+      if (p.fountain_no) rows.push([s.fountainNo, p.fountain_no]);
+    }
     if (p.aka) rows.unshift([s.aka, p.aka]);
     const osm = `https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lon}#map=18/${p.lat}/${p.lon}`;
     const dir = `https://www.openstreetmap.org/directions?route=%3B${p.lat}%2C${p.lon}`;
@@ -329,6 +352,8 @@
       <div class="pop-body">
         <span class="pop-cat" style="--c:${COLORS[p.cat]}"><i></i>${esc(catLabel(p))}</span>${dist}
         <dl>${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+        ${p.note ? `<p class="pop-note">${esc(p.note.charAt(0).toUpperCase() + p.note.slice(1))}.</p>` : ""}
+        ${p.checked ? `<p class="pop-small">${esc(s.checkedNote(p.checked))}</p>` : ""}
         <div class="pop-links">
           ${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(s.website)}</a>` : ""}
           <a href="${dir}" target="_blank" rel="noopener">${esc(s.directions)}</a>
@@ -386,10 +411,13 @@
     }
     ol.innerHTML = list.map((p) => {
       const name = lang === "el" ? p.name : (p.name_en || p.name);
-      const mark = p.green_no
-        ? `<span class="mark num" style="--c:${COLORS.green};background:var(--c)" aria-hidden="true">${p.green_no}</span>`
-        : `<span class="mark" style="--c:${COLORS[p.cat]}" aria-hidden="true"></span>`;
-      const meta = `${catLabel(p)}, ${p.district || p.street}`;
+      const mark = p.cat === "fountain"
+        ? `<span class="mark drop${p.active ? "" : " off"}" aria-hidden="true">${DROP}</span>`
+        : p.green_no
+          ? `<span class="mark num" style="--c:${COLORS.green};background:var(--c)" aria-hidden="true">${p.green_no}</span>`
+          : `<span class="mark" style="--c:${COLORS[p.cat]}" aria-hidden="true"></span>`;
+      const status = p.cat === "fountain" && !p.active ? `, ${s.fountainOff.toLowerCase()}` : "";
+      const meta = `${catLabel(p)}, ${p.district || p.street}${status}`;
       return `<li><button class="item" type="button" data-id="${p.id}"${p.id === state.current ? ' aria-current="true"' : ""}>
         ${mark}<span class="item-name"${lang === "en" && !p.name_en ? ' lang="el"' : ""}>${esc(name)}</span>${state.me ? `<span class="item-dist">${fmtDist(p.dist)}</span>` : "<span></span>"}
         <span class="item-meta">${esc(meta)}</span></button></li>`;
@@ -428,8 +456,22 @@
     if (isMobile()) setSheet("collapsed");
   }
 
+  // A link to a place in a hidden category switches that category on first
+  function openFromHash() {
+    const m = location.hash.match(/^#p-(\d+)$/);
+    const p = m && byId.get(+m[1]);
+    if (!p || p.id === state.current) return;
+    if (!state.cats.has(p.cat)) {
+      state.cats.add(p.cat);
+      const box = document.querySelector(`#cats input[value="${p.cat}"]`);
+      if (box) box.checked = true;
+      render();
+    }
+    select(p.id);
+  }
+
   function resetFilters() {
-    state.q = ""; state.area = ""; state.cats = new Set(CATS);
+    state.q = ""; state.area = ""; state.cats = defaultCats();
     styleZones();
     $("#q").value = ""; $("#community").value = "";
     document.querySelectorAll("#cats input").forEach((i) => { i.checked = true; });
@@ -625,8 +667,8 @@
       });
       map.fitBounds(muni ? muni[2].getBounds() : L.latLngBounds(places.map((p) => [p.lat, p.lon])), { padding: [16, 16] });
       applyLang();
-      const m = location.hash.match(/^#p-(\d+)$/);
-      if (m) select(+m[1]);
+      openFromHash();
+      addEventListener("hashchange", openFromHash);
     })
     .catch(() => {
       $("#count").textContent = lang === "el"

@@ -1,0 +1,1170 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "pidakes.1",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477083.73034803, 4203003.64474654]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 1,
+        "gid": 17,
+        "address": "Πλ.Φιλικής Εταιρείας(Κολωνακίου)",
+        "synoikia": "Κολωνάκι",
+        "name": "17.Πλ.Κολωνακίου",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "καταργήθηκε λόγω κατασκευής σταθμού μετεπιβίβασης ΜΕΤΡΟ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.2",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477164.09518438, 4205855.43616964]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 2,
+        "gid": 18,
+        "address": "Πλ.Κανάρη",
+        "synoikia": "Κυψέλη",
+        "name": "18.Πλ. Κανάρη",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "καταργήθηκε λόγω κατασκευής σταθμού μετεπιβίβασης ΜΕΤΡΟ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.3",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477112.42059081, 4209019.61279255]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 3,
+        "gid": 14,
+        "address": "Άλσος Προμπονά",
+        "synoikia": "Προμπονάς",
+        "name": "14.Άλσος Προμπονά(2 συντριβάνια)",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.4",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476715.2194194, 4201228.47078929]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 4,
+        "gid": 15,
+        "address": "Ηλιουπόλεως & Αετίωνος",
+        "synoikia": "Παγκράτι",
+        "name": "15.Ηλιουπόλεως & Αετίωνος",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.5",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475601.62304905, 4206033.34475137]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 5,
+        "gid": 16,
+        "address": "Παρασκευοπούλου & Δεμερτζή",
+        "synoikia": "Θυμαράκια",
+        "name": "16.Θυμαράκια(Παρασκευοπούλου)3 συντρ.",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.6",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476679.02788183, 4205668.44825905]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 6,
+        "gid": 10,
+        "address": "Επτανήσου & Φωκίωνος Νέγρη",
+        "synoikia": "Κυψέλη",
+        "name": "10.Φωκίωνος Νέγρη(Επτανήσου)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.7",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477684.15311953, 4202752.88194756]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 7,
+        "gid": 11,
+        "address": "Βασ. Κων/νου & Ναιάδων",
+        "synoikia": "Ιλίσια",
+        "name": "11.Ίδρυμα ΕρευνώνΝαιάδων",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.8",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475112.24391995, 4200451.70460819]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 8,
+        "gid": 5,
+        "address": "Τιμοκρέοντος & Παπανικολάου",
+        "synoikia": "Αγιος Σώστης",
+        "name": "5.Άγιος Σώστης",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.9",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475725.70936462, 4200631.5990713]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 9,
+        "gid": 28,
+        "address": "Πλ.Μάχης Αναλάτου(ΙΚΑ)",
+        "synoikia": "Δουργούτι",
+        "name": "28.Πλ.Μάχης Αναλάτου(ΙΚΑ)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.10",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475401.7962395, 4203408.38670907]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 10,
+        "gid": 31,
+        "address": "Πλ.Ελευθερίας(Κουμουνδούρου)",
+        "synoikia": "Κέντρο",
+        "name": "31.Πλ.Ελευθερίας(Κουμουνδούρου)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.11",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475991.22985294, 4203992.07949253]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 11,
+        "gid": 32,
+        "address": "Πλ.Λαυρίου(Γ΄Σεπτεμβρίου & Χαλκοκονδύλη)",
+        "synoikia": "Ομόνοια",
+        "name": "32.Πλ.Λαυρίου(Γ΄Σεπτεμβρίου)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.12",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476431.29170878, 4202869.70356658]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 12,
+        "gid": 12,
+        "address": "Ερμού & Νίκης",
+        "synoikia": "Σύνταγμα",
+        "name": "12.Νίκης(Ερμού)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.13",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476361.66381326, 4202881.27853136]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 13,
+        "gid": 13,
+        "address": "Ερμού & Βουλής",
+        "synoikia": "Σύνταγμα",
+        "name": "13.Βουλής(Ερμού)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.14",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477891.51524231, 4201961.27377743]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 14,
+        "gid": 19,
+        "address": "Υμηττού & Ιφικράτους",
+        "synoikia": "Παγκράτι",
+        "name": "19.Υμηττού & Ιφικράτους",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.15",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476434.26741018, 4203406.78573526]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 15,
+        "gid": 20,
+        "address": "Πανεπιστήμιο",
+        "synoikia": "Πανεπιστημίου",
+        "name": "20.Πανεπιστήμιο 1",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.16",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476441.65427592, 4203397.70491061]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 16,
+        "gid": 21,
+        "address": "Πανεπιστήμιο",
+        "synoikia": "Πανεπιστημίου",
+        "name": "21.Πανεπιστήμιο 2",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.17",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476313.73640368, 4203323.24552416]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 17,
+        "gid": 22,
+        "address": "Σταδίου & Κοραή",
+        "synoikia": "Σύνταγμα",
+        "name": "22.Κοραή(καταρράκτης)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.18",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476365.72291575, 4203356.65065983]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 18,
+        "gid": 23,
+        "address": "Πανεπιστημίου & Κοραή",
+        "synoikia": "Σύνταγμα",
+        "name": "23.Κοραή & Πανεπιστημίου",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.19",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476789.94965317, 4205681.63915115]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 19,
+        "gid": 1,
+        "address": "Αγίας Ζώνης και Φωκίωνος Νέγρη",
+        "synoikia": "Κυψέλη",
+        "name": "1.Φωκίωνος Νέγρη(Αγίας Ζώνης)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.20",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [479194.77367511, 4203578.26772453]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 20,
+        "gid": 2,
+        "address": "Παπαδιαμαντοπούλου & Φαραντάτων",
+        "synoikia": "Γουδή",
+        "name": "2.Πλ. Αγ.Θωμά",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.21",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476581.78166802, 4200719.57429281]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 21,
+        "gid": 3,
+        "address": "Λεωφ. Βουλιαγμένης & Καφαντάρη",
+        "synoikia": "Γούβα",
+        "name": "3.Άγιος Ιωάννης(Βουλιαγμένης)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.22",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476091.5301188, 4206395.94674479]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 22,
+        "gid": 4,
+        "address": "Αχαρνών & Ζερβουδάκη",
+        "synoikia": "Αγιος Νικόλαος\n- Αχαρνών",
+        "name": "4.Άγιος Νικόλαος",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.23",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476045.79236694, 4201955.20074881]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 23,
+        "gid": 7,
+        "address": "Βεΐκου & Δημητρακοπούλου",
+        "synoikia": "Μακρυγιάννη",
+        "name": "7.Βεΐκου",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.24",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476542.72684415, 4202980.17333615]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 24,
+        "gid": 8,
+        "address": "Βουκουρεστίου και Σταδίου",
+        "synoikia": "Σύνταγμα",
+        "name": "8.Βουκουρεστίου",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.25",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476588.97118215, 4205646.97406235]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 25,
+        "gid": 6,
+        "address": "Δροσοπούλου & Φωκίωνος Νέγρη",
+        "synoikia": "Κυψέλη",
+        "name": "6.Φωκίωνος Νέγρη(Δροσοπούλου)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.26",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477631.77485875, 4208028.7163599]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 26,
+        "gid": 9,
+        "address": "Τραλλέων & Συρακουσών",
+        "synoikia": "Λαμπρινή",
+        "name": "9.Πλ. Έλληνα Εργάτη",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.27",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476314.15418371, 4204612.44314012]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 27,
+        "gid": 24,
+        "address": "Πλ.Αιγύπτου",
+        "synoikia": "Πεδίο Άρεως",
+        "name": "24.Πλ.Αιγύπτου(Πατησίων & Αλεξάνδρας)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.28",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474751.90148188, 4204636.48266902]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 28,
+        "gid": 25,
+        "address": "Πλ.Σωτήρη Πέτρουλα",
+        "synoikia": "Κολωνός",
+        "name": "25.Πλ.Σωτήρη Πέτρουλα",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.29",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476463.83324491, 4205832.68702467]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 29,
+        "gid": 26,
+        "address": "Πλ.Αμερικής",
+        "synoikia": "Πλ.Αμερικής",
+        "name": "26.Πλ.Αμερικής(Πατησίων)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.30",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475501.82987892, 4205177.0306881]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 30,
+        "gid": 27,
+        "address": "Πλ.Αττικής",
+        "synoikia": "Πλ.Αττικής",
+        "name": "27.Πλ.Αττικής(Λιοσίων)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.31",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475397.5818006, 4203980.52789524]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 31,
+        "gid": 29,
+        "address": "Πλ.Καραϊσκάκη",
+        "synoikia": "Πλ.Καραϊσκάκη",
+        "name": "29.Πλ.Καραϊσκάκη",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.32",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475954.66676255, 4203551.65381499]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 32,
+        "gid": 30,
+        "address": "Πλ.Εθνικής Αντιστάσεως(Κοτζιά)",
+        "synoikia": "Κέντρο",
+        "name": "30.Πλ.Εθνικής Αντιστάσεως(Κοτζιά)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.33",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475881.22240082, 4205180.84342967]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 33,
+        "gid": 52,
+        "address": "Πλ.Αγ.Παντελεήμονα",
+        "synoikia": "Άγιος Παντελεήμονας",
+        "name": "52.Πλ.Αγ.Παντελεήμονα",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.34",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474071.90600681, 4203103.45335033]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 34,
+        "gid": 38,
+        "address": "Πλ.Φλέμιγκ(Σπύρου Πάτση)",
+        "synoikia": "Βοτανικός",
+        "name": "38.Πλ.Φλέμιγκ(Σπύρου Πάτση)",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.35",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474192.27716582, 4203419.92504697]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 35,
+        "gid": 41,
+        "address": "Σπύρου Πάτση & Γρεβενών",
+        "synoikia": "Βοτανικός",
+        "name": "41.Σπύρου Πάτση & Γρεβενών",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.36",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475468.78901929, 4201323.26216784]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 36,
+        "gid": 42,
+        "address": "Συγγρού & Μεϊντάνη",
+        "synoikia": "Συγγρού",
+        "name": "42.Συγγρού & Μεϊντάνη",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.37",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475962.41405462, 4203792.09639916]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 37,
+        "gid": 50,
+        "address": "Πλ.Ομόνοιας",
+        "synoikia": "Ομόνοια",
+        "name": "50.Πλ.Ομόνοιας",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.38",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476010.54426498, 4203773.18651444]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 38,
+        "gid": 51,
+        "address": "Πλ.Ομόνοιας - Πεντάκυκλος",
+        "synoikia": "Ομόνοια",
+        "name": "51.Πλ.Ομόνοιας - Πεντάκυκλος",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.39",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [478469.32117278, 4203647.62208256]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 39,
+        "gid": 33,
+        "address": "Πλ.Μαβίλη(Βασ.Σοφίας)",
+        "synoikia": "Βασ.Σοφίας",
+        "name": "33.Πλ.Μαβίλη(Βασ.Σοφίας)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.40",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [478003.76053477, 4202812.77064266]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 40,
+        "gid": 34,
+        "address": "Πλ.Μαδρίτης",
+        "synoikia": "Ιλίσια",
+        "name": "34.Πλ.Μαδρίτης(Μιχαλακοπούλου)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.41",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477809.72071613, 4202085.76819894]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 41,
+        "gid": 35,
+        "address": "Πλ.Μεσολογγίου(Αστυδάμαντος)",
+        "synoikia": "Παγκράτι",
+        "name": "35.Πλ.Μεσολογγίου(Αστυδάμαντος)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.42",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475229.55027762, 4203922.70075575]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 42,
+        "gid": 36,
+        "address": "Πλ.Μεταξουργείου(Λένορμαν)",
+        "synoikia": "Μεταξουργείο",
+        "name": "36.Πλ.Μεταξουργείου(Λένορμαν)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.43",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477172.30513455, 4207803.06970702]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 43,
+        "gid": 37,
+        "address": "Πλ.Παπαδιαμάντη",
+        "synoikia": "Άνω Πατήσια",
+        "name": "37.Πλ.Παπαδιαμάντη",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-03T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.44",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476572.3435891, 4203487.47124253]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 44,
+        "gid": 39,
+        "address": "Πνευματικό Κέντρο",
+        "synoikia": "Ακαδημίας",
+        "name": "39.Πνευματικό Κέντρο",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.45",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477270.09848188, 4202807.24107926]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 45,
+        "gid": 40,
+        "address": "Ρηγίλλης & Βασ.Σοφίας",
+        "synoikia": "Σύνταγμα",
+        "name": "40.Ρηγίλλης & Βασ.Σοφίας",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.46",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476567.44061406, 4202848.27478554]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 46,
+        "gid": 43,
+        "address": "Πλ.Συντάγματος",
+        "synoikia": "Σύνταγμα",
+        "name": "43.Πλ.Συντάγματος(κεντρικό)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.47",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476548.15331147, 4202900.31514869]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 47,
+        "gid": 44,
+        "address": "Πλ.Συντάγματος(κατ/κτης αρ.)",
+        "synoikia": "Σύνταγμα",
+        "name": "44.Πλ.Συντάγματος(κατ/κτης αρ.)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.48",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476534.30049025, 4202807.29126691]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 48,
+        "gid": 45,
+        "address": "Πλ.Συντάγματος(κατ/κτης δεξ.)",
+        "synoikia": "Σύνταγμα",
+        "name": "45.Πλ.Συντάγματος(κατ/κτης δεξ.)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.49",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477310.20774912, 4202502.21522597]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 49,
+        "gid": 46,
+        "address": "Βασ.Κωνσταντίνου(άγαλμα Τρούμαν)",
+        "synoikia": "Παγκράτι",
+        "name": "46.Βασ.Κωνσταντίνου(άγαλμα Τρούμαν)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.50",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476609.72425015, 4207329.97494833]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 50,
+        "gid": 47,
+        "address": "Φιξ Πατησίων & Καυτατζόγλου",
+        "synoikia": "Άνω Πατήσια",
+        "name": "47.Φιξ Πατησίων & Καυτατζόγλου",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.51",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477851.66956202, 4202977.72598302]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 51,
+        "gid": 48,
+        "address": "Χίλτον, Βασ.Σοφίας",
+        "synoikia": "Κολωνάκι",
+        "name": "48.Χίλτον, Βασ.Σοφίας",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.52",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475981.28083143, 4207670.34713012]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 52,
+        "gid": 49,
+        "address": "Αγιος Ελευθέριος, Αχαρνών",
+        "synoikia": "Άγιος Ελευθέριος",
+        "name": "49.Πλατεία Ναθαναήλ(Αγιος Ελευθέριος)",
+        "status": "ΕΝΕΡΓΟ",
+        "date": "2022-08-01T00:00:00Z",
+        "sxolia": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.53",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475498.2905585, 4201228.9654599]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 53,
+        "gid": 53,
+        "address": "Καλλιρρόης και Λ.Συγγρού",
+        "synoikia": "Νέος Κόσμος",
+        "name": "53.Πλ. Αρμενίων",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-04T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.54",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477360.24086769, 4204390.98422978]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 54,
+        "gid": 54,
+        "address": "Λ.Αλεξάνδρας",
+        "synoikia": "Αλεξάνδρας",
+        "name": "54.Πλ.Αργεντινής Δημοκρατίας",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-04T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pidakes.55",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475191.54893712, 4201808.76445919]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 55,
+        "gid": 55,
+        "address": "Άλσος Φιλοπάππου",
+        "synoikia": "Φιλοπάππου",
+        "name": "55.Άλσος Φιλοπάππου",
+        "status": "ΑΝΕΝΕΡΓΟ",
+        "date": "2022-08-04T00:00:00Z",
+        "sxolia": "έχει ενταχθεί στη β' φάση \"Αναβάθμιση πδάκων\""
+      }
+    }
+  ],
+  "totalFeatures": 55,
+  "numberMatched": 55,
+  "numberReturned": 55,
+  "timeStamp": "2026-11-04T22:05:55.955Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::2100"
+    }
+  }
+}

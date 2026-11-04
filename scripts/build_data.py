@@ -8,6 +8,7 @@ Inputs
   peiraios_axonas.json      Piraeus Street historic axis (traditional sector)
   tomeas_arxaiologias.json  Archaeology Sector, ΦΕΚ 96Δ/2004
   koinotites.json           the 7 municipal communities (Δημοτικές Κοινότητες)
+  pidakes.json              municipal ornamental fountains (υδατοπίδακες), status as of 2022
 
 Outputs
   data/places.geojson       every point, tagged with the zones it falls in
@@ -49,8 +50,9 @@ CATEGORY_FIX = {204: "landmark"}  # Panathenaic Stadium is coded as a square (0)
 # richer (address, link), so the landmark is dropped: fid -> venue fid
 REPLACED_BY_VENUE = {188: 44, 72: 65, 144: 114, 192: 147}
 
-# Venue ids are offset so they never clash with toponymy fids in URLs (#p-1044)
+# Venue and fountain ids are offset so they never clash with toponymy fids in URLs
 VENUE_ID_OFFSET = 1000
+FOUNTAIN_ID_OFFSET = 2000
 
 VENUE_TYPES = {
     "ΜΟΥΣΕΙΟ": "museum", "ΒΙΒΛΙΟΘΗΚΗ": "library", "ΘΕΑΤΡΟ": "theatre",
@@ -309,6 +311,56 @@ def build_toponymy(zones):
     return out
 
 
+def clean_fountain_name(text):
+    """'11.Ίδρυμα ΕρευνώνΝαιάδων' -> 'Ίδρυμα Ερευνών (Ναιάδων)', returns (name, number)."""
+    text = squash(text)
+    m = re.match(r"^(\d+)\.\s*", text)
+    no = int(m.group(1)) if m else None
+    text = text[m.end():] if m else text
+    text = text.replace("ΕρευνώνΝαιάδων", "Ερευνών (Ναιάδων)")
+    text = re.sub(r"\bΠλ\.\s*", "Πλατεία ", text)
+    text = re.sub(r"\bΒασ\.\s*", "Βασ. ", text)
+    text = re.sub(r"\bΑγ\.\s*", "Αγ. ", text)
+    text = re.sub(r"(\S)\(", r"\1 (", text)
+    text = re.sub(r"\)(\S)", r") \1", text)
+    text = text.replace("3 συντρ.", "3 συντριβάνια").replace("κατ/κτης", "καταρράκτης").replace(" αρ.)", " αριστερά)").replace(" δεξ.)", " δεξιά)")
+    return squash(text), no
+
+
+def tidy_greek(text):
+    text = re.sub(r"\bΠλ\.\s*", "Πλατεία ", text)
+    text = re.sub(r"\bΒασ\.\s*", "Βασ. ", text)
+    text = re.sub(r"\bΑγιος\b", "Άγιος", text)
+    return squash(text)
+
+
+def build_fountains(zones, comms):
+    out = []
+    for f in load("pidakes.json")["features"]:
+        p = f["properties"]
+        x, y = f["geometry"]["coordinates"][0]
+        name, no = clean_fountain_name(p["name"])
+        name = tidy_greek(name)
+        address, _ = clean_fountain_name(p.get("address") or "")
+        address = tidy_greek(address)
+        out.append(feature(FOUNTAIN_ID_OFFSET + p["fid"], wgs(x, y), {
+            "name": name,
+            "aka": "",
+            "name_en": "",
+            "cat": "fountain",
+            "fountain_no": no,
+            "active": p.get("status") == "ΕΝΕΡΓΟ",
+            "note": squash(p.get("sxolia")).replace("πδάκων", "πιδάκων"),
+            "checked": (p.get("date") or "")[:10],
+            "address": address,
+            "street": address,
+            "district": tidy_greek((p.get("synoikia") or "").replace("\n- ", " ")),
+            "community": community_of(x, y, comms),
+            "zones": zones_of(x, y, zones),
+        }, (x, y)))
+    return out
+
+
 def build_venues(zones):
     out = []
     for f in load("xoroi_politismou.json")["features"]:
@@ -361,7 +413,7 @@ def main():
     zones = build_zones()
     comms = build_communities()
     build_municipality(comms)
-    places = build_toponymy(zones) + build_venues(zones)
+    places = build_toponymy(zones) + build_venues(zones) + build_fountains(zones, comms)
     places.sort(key=lambda f: f["id"])
     check_communities(places, comms)
     write(OUT, places, "places")
