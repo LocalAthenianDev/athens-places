@@ -16,6 +16,8 @@
       communitiesGroup: "Δημοτικές κοινότητες",
       zonesGroup: "Ιστορικές ζώνες",
       zoneDt: "Ζώνη",
+      layers: "Επίπεδα",
+      layersHint: "Όρια στον χάρτη",
       community: (n) => `${n}η Δημοτική Κοινότητα`,
       communityShort: (n) => `${n}η Κοινότητα`,
       near: "Κοντά μου",
@@ -58,6 +60,8 @@
       communitiesGroup: "Municipal communities",
       zonesGroup: "Historic zones",
       zoneDt: "Zone",
+      layers: "Layers",
+      layersHint: "Boundaries on the map",
       community: (n) => `${ordinal(n)} Municipal Community`,
       communityShort: (n) => `${ordinal(n)} Community`,
       near: "Near me",
@@ -137,21 +141,77 @@
   const zonesLayer = L.layerGroup().addTo(map);
   const layer = L.layerGroup().addTo(map);
   let zones = [];
+  // Each boundary is drawn twice: a white casing underneath keeps the coloured
+  // line readable on top of busy map tiles.
   const zoneStyle = (z, on) => ({
-    color: z.color, weight: on ? 3 : 2, dashArray: z.id === "archaeology" ? "2 5" : "7 5",
-    fillColor: z.color, fillOpacity: on ? 0.12 : 0.03, lineCap: "round",
+    color: z.color, weight: on ? 4.5 : 3, opacity: 1,
+    dashArray: z.dash || null, lineCap: "round", lineJoin: "round",
+    fillColor: z.color, fillOpacity: on ? 0.16 : 0.07,
   });
+  const casingStyle = (on) => ({ color: "#fff", weight: on ? 9 : 7, opacity: 0.9, fill: false, interactive: false });
+  const ZONE_DASH = { archaeology: "1 7" };
+  const hidden = new Set((store.get("places-hidden") || "").split(",").filter(Boolean));
   const zoneName = (z) => (lang === "el" ? z.name : z.name_en);
   const zoneLabel = (z) => zoneName(z) + (z.note ? ` (${z.note})` : "");
   const catLabel = (p) => (p.venue ? t().venue[p.venue] : t().cat1[p.cat]);
   function styleZones() {
     zones.forEach((z) => {
       const on = state.area === `z:${z.id}`;
+      const show = on || !hidden.has(z.id);
+      [z.casing, z.layer].forEach((l) => {
+        if (show && !zonesLayer.hasLayer(l)) zonesLayer.addLayer(l);
+        if (!show && zonesLayer.hasLayer(l)) zonesLayer.removeLayer(l);
+      });
+      z.casing.setStyle(casingStyle(on));
       z.layer.setStyle(zoneStyle(z, on));
-      if (on) z.layer.bringToFront();
+      if (on && show) { z.casing.bringToFront(); z.layer.bringToFront(); }
       z.layer.setTooltipContent(zoneLabel(z));
     });
+    buildLayersBox();
   }
+
+  /* ---------- Layers box (legend + toggles) ---------- */
+  const LayersBox = L.Control.extend({
+    options: { position: "topright" },
+    onAdd() {
+      const el = L.DomUtil.create("div", "layers-box");
+      L.DomEvent.disableClickPropagation(el);
+      L.DomEvent.disableScrollPropagation(el);
+      return el;
+    },
+  });
+  const layersBox = new LayersBox().addTo(map);
+  let layersOpen = !matchMedia("(max-width: 760px)").matches;
+  function buildLayersBox() {
+    const s = t();
+    const el = layersBox.getContainer();
+    const rows = zones.map((z) => `
+      <label class="lyr">
+        <input type="checkbox" data-layer="${z.id}"${hidden.has(z.id) ? "" : " checked"}>
+        <svg class="swatch" viewBox="0 0 28 14" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="10" rx="2" fill="${z.color}" fill-opacity=".14"/>
+          <rect x="2" y="2" width="24" height="10" rx="2" fill="none" stroke="#fff" stroke-width="4"/>
+          <rect x="2" y="2" width="24" height="10" rx="2" fill="none" stroke="${z.color}" stroke-width="2.2"${z.dash ? ` stroke-dasharray="${z.dash}" stroke-linecap="round"` : ""}/>
+        </svg>
+        <span>${esc(zoneName(z))}${z.note ? `<small>${esc(z.note)}</small>` : ""}</span>
+      </label>`).join("");
+    el.innerHTML = `
+      <button type="button" class="lyr-toggle" aria-expanded="${layersOpen}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+        <span>${esc(s.layers)}</span>
+      </button>
+      <div class="lyr-list"${layersOpen ? "" : " hidden"}><p class="lyr-hint">${esc(s.layersHint)}</p>${rows}</div>`;
+  }
+  layersBox.getContainer().addEventListener("click", (e) => {
+    if (e.target.closest(".lyr-toggle")) { layersOpen = !layersOpen; buildLayersBox(); }
+  });
+  layersBox.getContainer().addEventListener("change", (e) => {
+    const id = e.target.dataset.layer;
+    if (!id) return;
+    if (e.target.checked) hidden.delete(id); else hidden.add(id);
+    store.set("places-hidden", [...hidden].join(","));
+    styleZones();
+  });
   let meMarker = null;
 
   function makeMarker(p) {
@@ -449,7 +509,8 @@
   Promise.all([getJSON("data/places.geojson"), getJSON("data/zones.geojson").catch(() => ({ features: [] }))])
     .then(([geo, zoneGeo]) => {
       zones = zoneGeo.features.map((f) => {
-        const z = { id: f.id, ...f.properties };
+        const z = { id: f.id, ...f.properties, dash: ZONE_DASH[f.id] };
+        z.casing = L.geoJSON(f, { style: casingStyle(false), interactive: false }).addTo(zonesLayer);
         z.layer = L.geoJSON(f, { style: zoneStyle(z, false) })
           .bindTooltip(zoneLabel(z), { sticky: true, className: "zone-tip" })
           .on("click", () => setArea(state.area === `z:${z.id}` ? "" : `z:${z.id}`))

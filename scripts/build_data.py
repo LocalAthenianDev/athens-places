@@ -31,7 +31,7 @@ ZONES_OUT = ROOT / "data" / "zones.geojson"
 ZONES = [
     ("tomeas_arxaiologias.json", "archaeology", "Τομέας Αρχαιολογίας", "Archaeology Sector", "#a3441f", "ΦΕΚ 96Δ/2004"),
     ("istoriko_kentro.json", "centre", "Ιστορικό Κέντρο", "Historic Centre", "#1b3f8b", ""),
-    ("peiraios_axonas.json", "peiraios", "Ιστορικός Άξονας Οδού Πειραιώς", "Piraeus Street Historic Axis", "#1b3f8b", ""),
+    ("peiraios_axonas.json", "peiraios", "Ιστορικός Άξονας Οδού Πειραιώς", "Piraeus Street Historic Axis", "#0e7c86", ""),
 ]
 
 # Toponymy category codes (field "places")
