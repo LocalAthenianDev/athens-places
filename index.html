@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Τόποι της Αθήνας | Athens Places</title>
+  <meta name="description" content="Πλατείες, μνημεία, τοπόσημα και χώροι πρασίνου του Δήμου Αθηναίων σε έναν χάρτη, από τα ανοιχτά δεδομένα του Δήμου.">
+  <meta property="og:title" content="Τόποι της Αθήνας">
+  <meta property="og:description" content="302 πλατείες, μνημεία, τοπόσημα και χώροι πρασίνου του Δήμου Αθηναίων σε έναν χάρτη.">
+  <meta property="og:url" content="https://places.athensapps.gr/">
+  <meta name="theme-color" content="#1b3f8b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500;600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel" id="panel" aria-label="Αναζήτηση και λίστα τόπων">
+      <button class="panel-handle" id="panelHandle" type="button" aria-expanded="false" aria-controls="panel">
+        <span class="grip" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="togglePanel">Εμφάνιση λίστας</span>
+      </button>
+
+      <header class="sign">
+        <a class="sign-plate" href="https://athensapps.gr/" title="athensapps.gr">
+          <span class="sign-kicker" data-i18n="kicker">Δήμος Αθηναίων</span>
+          <span class="sign-title" data-i18n="title">Τόποι της Αθήνας</span>
+          <span class="sign-sub" data-i18n="titleAlt">Athens Places</span>
+        </a>
+        <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+      </header>
+
+      <div class="controls">
+        <label class="search">
+          <span class="sr-only" data-i18n="searchLabel">Αναζήτηση τόπου</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Αναζήτηση, π.χ. Κολωνάκι" data-i18n-ph="searchPh">
+        </label>
+
+        <fieldset class="cats" id="cats">
+          <legend class="sr-only" data-i18n="catsLegend">Κατηγορίες</legend>
+        </fieldset>
+
+        <div class="row">
+          <label class="select">
+            <span class="sr-only" data-i18n="communityLabel">Δημοτική κοινότητα</span>
+            <select id="community"></select>
+          </label>
+          <button class="near" id="nearBtn" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/></svg>
+            <span data-i18n="near">Κοντά μου</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="count" id="count" aria-live="polite"></p>
+      <ol class="list" id="list"></ol>
+
+      <footer class="foot">
+        <p data-i18n-html="source">Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a>. Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+        <p data-i18n-html="about">Ανεξάρτητη εφαρμογή ανοιχτού κώδικα, όχι επίσημη εφαρμογή του Δήμου. Μέρος του <a href="https://athensapps.gr/">athensapps.gr</a>, κώδικας στο <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.</p>
+      </footer>
+    </aside>
+
+    <main class="map" id="map" aria-label="Χάρτης"></main>
+  </div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
