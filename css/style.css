@@ -328,3 +328,15 @@ button, input, select { font: inherit; color: inherit; }
 .lyr input { margin: 0; accent-color: var(--enamel); }
 .swatch { width: 28px; height: 14px; }
 .lyr small { display: block; color: var(--ink-soft); font-size: 11px; }
+
+.comm-label {
+  display: grid; place-items: center;
+  width: 34px; height: 22px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .88);
+  border: 1.5px solid #2b3242;
+  color: #2b3242;
+  font: 700 13px/1 var(--cond);
+  cursor: pointer;
+}
+.comm-label.on { background: #2b3242; color: #fff; }

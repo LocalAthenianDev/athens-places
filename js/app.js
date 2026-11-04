@@ -18,6 +18,7 @@
       zoneDt: "Ζώνη",
       layers: "Επίπεδα",
       layersHint: "Όρια στον χάρτη",
+      communitiesLayer: "Δημοτικές κοινότητες",
       community: (n) => `${n}η Δημοτική Κοινότητα`,
       communityShort: (n) => `${n}η Κοινότητα`,
       near: "Κοντά μου",
@@ -43,7 +44,7 @@
       aka: "και",
       langBtn: "EN",
       langAria: "Switch to English",
-      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a> (τοπωνυμία, χώροι πολιτισμού, Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας ΦΕΚ 96Δ/2004). Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
+      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a> (τοπωνυμία, χώροι πολιτισμού, δημοτικές κοινότητες, Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας ΦΕΚ 96Δ/2004). Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
       about: 'Ανεξάρτητη εφαρμογή ανοιχτού κώδικα, όχι επίσημη εφαρμογή του Δήμου. Μέρος του <a href="https://athensapps.gr/">athensapps.gr</a>, κώδικας στο <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Τόποι της Αθήνας | Athens Places",
     },
@@ -62,6 +63,7 @@
       zoneDt: "Zone",
       layers: "Layers",
       layersHint: "Boundaries on the map",
+      communitiesLayer: "Municipal communities",
       community: (n) => `${ordinal(n)} Municipal Community`,
       communityShort: (n) => `${ordinal(n)} Community`,
       near: "Near me",
@@ -87,7 +89,7 @@
       aka: "aka",
       langBtn: "ΕΛ",
       langAria: "Αλλαγή σε ελληνικά",
-      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a> (toponymy, cultural venues, Historic Centre, Piraeus Street axis, Archaeology Sector ΦΕΚ 96Δ/2004). Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
+      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a> (toponymy, cultural venues, municipal communities, Historic Centre, Piraeus Street axis, Archaeology Sector ΦΕΚ 96Δ/2004). Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
       about: 'An independent open source app, not an official City of Athens app. Part of <a href="https://athensapps.gr/">athensapps.gr</a>, code on <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Athens Places | Τόποι της Αθήνας",
     },
@@ -138,7 +140,33 @@
     maxZoom: 19,
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
+  // Community numbers sit above the markers so they are never hidden
+  map.createPane("commLabels").style.zIndex = 640;
+  const commLayer = L.layerGroup().addTo(map);
   const zonesLayer = L.layerGroup().addTo(map);
+  let comms = [];
+  const COMM_COLOR = "#2b3242";
+  const commStyle = (on) => ({
+    color: COMM_COLOR, weight: on ? 3.5 : 1.6, opacity: on ? 1 : 0.75,
+    fillColor: COMM_COLOR, fillOpacity: on ? 0.06 : 0, interactive: false,
+  });
+  const commCasing = (on) => ({ color: "#fff", weight: on ? 8 : 5, opacity: 0.85, fill: false, interactive: false });
+  function styleComms() {
+    const show = !hidden.has("communities");
+    comms.forEach((c) => {
+      const on = state.area === String(c.no);
+      [c.casing, c.layer, c.label].forEach((l) => {
+        const want = show || on;
+        if (want && !commLayer.hasLayer(l)) commLayer.addLayer(l);
+        if (!want && commLayer.hasLayer(l)) commLayer.removeLayer(l);
+      });
+      c.casing.setStyle(commCasing(on));
+      c.layer.setStyle(commStyle(on));
+      const el = c.label.getElement();
+      if (el) el.firstElementChild.classList.toggle("on", on);
+      if (on) { c.casing.bringToFront(); c.layer.bringToFront(); }
+    });
+  }
   const layer = L.layerGroup().addTo(map);
   let zones = [];
   // Each boundary is drawn twice: a white casing underneath keeps the coloured
@@ -167,6 +195,7 @@
       if (on && show) { z.casing.bringToFront(); z.layer.bringToFront(); }
       z.layer.setTooltipContent(zoneLabel(z));
     });
+    styleComms();
     buildLayersBox();
   }
 
@@ -195,12 +224,21 @@
         </svg>
         <span>${esc(zoneName(z))}${z.note ? `<small>${esc(z.note)}</small>` : ""}</span>
       </label>`).join("");
+    const commRow = comms.length ? `
+      <label class="lyr">
+        <input type="checkbox" data-layer="communities"${hidden.has("communities") ? "" : " checked"}>
+        <svg class="swatch" viewBox="0 0 28 14" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="10" rx="2" fill="none" stroke="#fff" stroke-width="3.5"/>
+          <rect x="2" y="2" width="24" height="10" rx="2" fill="none" stroke="${COMM_COLOR}" stroke-width="1.6"/>
+        </svg>
+        <span>${esc(s.communitiesLayer)}</span>
+      </label>` : "";
     el.innerHTML = `
       <button type="button" class="lyr-toggle" aria-expanded="${layersOpen}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
         <span>${esc(s.layers)}</span>
       </button>
-      <div class="lyr-list"${layersOpen ? "" : " hidden"}><p class="lyr-hint">${esc(s.layersHint)}</p>${rows}</div>`;
+      <div class="lyr-list"${layersOpen ? "" : " hidden"}><p class="lyr-hint">${esc(s.layersHint)}</p>${commRow}${rows}</div>`;
   }
   layersBox.getContainer().addEventListener("click", (e) => {
     if (e.target.closest(".lyr-toggle")) { layersOpen = !layersOpen; buildLayersBox(); }
@@ -435,7 +473,9 @@
     render();
     const z = value.startsWith("z:") && zones.find((x) => `z:${x.id}` === value);
     const list = filtered();
+    const c = /^\d$/.test(value) && comms.find((x) => String(x.no) === value);
     if (z) map.flyToBounds(z.layer.getBounds(), fitOpts());
+    else if (c) map.flyToBounds(c.layer.getBounds(), fitOpts());
     else if (value && list.length) map.flyToBounds(L.latLngBounds(list.map((p) => [p.lat, p.lon])), fitOpts());
   }
 
@@ -506,8 +546,20 @@
   /* ---------- Boot ---------- */
   const byId = new Map();
   const getJSON = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
-  Promise.all([getJSON("data/places.geojson"), getJSON("data/zones.geojson").catch(() => ({ features: [] }))])
-    .then(([geo, zoneGeo]) => {
+  const optional = (url) => getJSON(url).catch(() => ({ features: [] }));
+  Promise.all([getJSON("data/places.geojson"), optional("data/zones.geojson"), optional("data/communities.geojson")])
+    .then(([geo, zoneGeo, commGeo]) => {
+      comms = commGeo.features.map((f) => {
+        const c = { no: f.properties.no };
+        c.casing = L.geoJSON(f, { style: commCasing(false), interactive: false }).addTo(commLayer);
+        c.layer = L.geoJSON(f, { style: commStyle(false), interactive: false }).addTo(commLayer);
+        const [lon, lat] = f.properties.label;
+        c.label = L.marker([lat, lon], {
+          icon: L.divIcon({ className: "", html: `<span class="comm-label">${c.no}η</span>`, iconSize: [34, 22], iconAnchor: [17, 11] }),
+          interactive: true, keyboard: false, pane: "commLabels",
+        }).on("click", () => setArea(state.area === String(c.no) ? "" : String(c.no))).addTo(commLayer);
+        return c;
+      });
       zones = zoneGeo.features.map((f) => {
         const z = { id: f.id, ...f.properties, dash: ZONE_DASH[f.id] };
         z.casing = L.geoJSON(f, { style: casingStyle(false), interactive: false }).addTo(zonesLayer);

@@ -7,10 +7,12 @@ Inputs
   istoriko_kentro.json      Historic Centre boundary
   peiraios_axonas.json      Piraeus Street historic axis (traditional sector)
   tomeas_arxaiologias.json  Archaeology Sector, ΦΕΚ 96Δ/2004
+  koinotites.json           the 7 municipal communities (Δημοτικές Κοινότητες)
 
 Outputs
   data/places.geojson       every point, tagged with the zones it falls in
   data/zones.geojson        the three zones in WGS84
+  data/communities.geojson  the 7 communities in WGS84, with a label point each
 
 No dependencies. Run from the repo root:
 
@@ -26,6 +28,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAWDIR = ROOT / "data" / "raw"
 OUT = ROOT / "data" / "places.geojson"
 ZONES_OUT = ROOT / "data" / "zones.geojson"
+COMMUNITIES_OUT = ROOT / "data" / "communities.geojson"
 
 # Zones: raw file, id, Greek name, English name, outline colour, source note
 ZONES = [
@@ -167,6 +170,60 @@ def build_zones():
     return zones
 
 
+def ring_centroid(ring):
+    a = cx = cy = 0.0
+    for (x1, y1), (x2, y2) in zip(ring, ring[1:] + ring[:1]):
+        cross = x1 * y2 - x2 * y1
+        a += cross
+        cx += (x1 + x2) * cross
+        cy += (y1 + y2) * cross
+    a *= 0.5
+    return cx / (6 * a), cy / (6 * a)
+
+
+def label_point(polys):
+    """A point well inside the largest polygon, for the community number."""
+    ring = max((p[0] for p in polys), key=ring_area)
+    cx, cy = ring_centroid(ring)
+    if in_polygons(cx, cy, polys):
+        return cx, cy
+    # Concave shape: scan a grid and keep the inside point farthest from the edge
+    xs, ys = [x for x, _ in ring], [y for _, y in ring]
+    best, best_d = (cx, cy), -1
+    for i in range(1, 30):
+        for j in range(1, 30):
+            x = min(xs) + (max(xs) - min(xs)) * i / 30
+            y = min(ys) + (max(ys) - min(ys)) * j / 30
+            if in_polygons(x, y, polys):
+                d = min((x - vx) ** 2 + (y - vy) ** 2 for vx, vy in ring)
+                if d > best_d:
+                    best, best_d = (x, y), d
+    return best
+
+
+def build_communities():
+    comms, features = [], []
+    for f in load("koinotites.json")["features"]:
+        p = f["properties"]
+        polys = polygons(f["geometry"])
+        no = int(p["no"])
+        comms.append((no, polys))
+        lx, ly = label_point(polys)
+        features.append({
+            "type": "Feature",
+            "id": no,
+            "geometry": {"type": "MultiPolygon", "coordinates": [[[wgs(x, y) for x, y in ring] for ring in poly] for poly in polys]},
+            "properties": {"no": no, "label": wgs(lx, ly), "area_km2": round(sum(ring_area(q[0]) for q in polys) / 1e6, 2)},
+        })
+    features.sort(key=lambda f: f["id"])
+    write(COMMUNITIES_OUT, features, "communities")
+    return comms
+
+
+def community_of(x, y, comms):
+    return next((no for no, polys in comms if in_polygons(x, y, polys)), None)
+
+
 def zones_of(x, y, zones):
     return [zid for zid, polys in zones if in_polygons(x, y, polys)]
 
@@ -197,7 +254,7 @@ def build_toponymy(zones):
             "district": clean_district(p.get("synoikia")),
             "community": int(p["dk"][0]) if p.get("dk") else None,
             "zones": zones_of(x, y, zones),
-        }))
+        }, (x, y)))
     return out
 
 
@@ -222,26 +279,39 @@ def build_venues(zones):
             "district": "",
             "community": int(p["dk"][0]) if p.get("dk") else None,
             "zones": zones_of(x, y, zones),
-        }))
+        }, (x, y)))
     return out
 
 
-def feature(fid, coords, props):
-    return {"type": "Feature", "id": fid, "geometry": {"type": "Point", "coordinates": coords}, "properties": props}
+def feature(fid, coords, props, xy):
+    # "_xy" keeps the Greek Grid coordinates for checks; it is not written out
+    return {"type": "Feature", "id": fid, "geometry": {"type": "Point", "coordinates": coords}, "properties": props, "_xy": xy}
 
 
 def write(path, features, what):
     path.write_text(
-        json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False, separators=(",", ":")),
+        json.dumps({"type": "FeatureCollection", "features": [{k: v for k, v in f.items() if k != "_xy"} for f in features]},
+                   ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
     print(f"Wrote {len(features)} {what} to {path.relative_to(ROOT)}")
 
 
+def check_communities(places, comms):
+    """Report places whose community field disagrees with the community polygons."""
+    for f in places:
+        x, y = f["_xy"]
+        geo = community_of(x, y, comms)
+        if geo != f["properties"]["community"]:
+            print(f"  community mismatch: {f['properties']['name']} field={f['properties']['community']} polygon={geo}")
+
+
 def main():
     zones = build_zones()
+    comms = build_communities()
     places = build_toponymy(zones) + build_venues(zones)
     places.sort(key=lambda f: f["id"])
+    check_communities(places, comms)
     write(OUT, places, "places")
 
 
