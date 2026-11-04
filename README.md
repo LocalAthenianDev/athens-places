@@ -11,6 +11,7 @@ Live στο **https://places.athensapps.gr**, μέρος του [athensapps.gr](
 - Χάρτης OpenStreetMap με 323 τόπους σε πέντε κατηγορίες
 - Οι χώροι πρασίνου εμφανίζονται με τον αριθμό τους στον επίσημο κατάλογο (1 έως 44)
 - Οι χώροι πολιτισμού έχουν διεύθυνση, φορέα και σύνδεσμο
+- Όρια του Δήμου με ελαφριά σκίαση έξω από αυτά
 - Όρια των 7 δημοτικών κοινοτήτων και τριών ζωνών (Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας), με υπόμνημα, διακόπτες και φίλτρο ανά περιοχή
 - Αναζήτηση στα ελληνικά ή στα λατινικά, χωρίς τόνους και κεφαλαία
 - «Κοντά μου» με ταξινόμηση κατά απόσταση
@@ -30,7 +31,7 @@ Live στο **https://places.athensapps.gr**, μέρος του [athensapps.gr](
 | `tomeas_arxaiologias.json` | Τομέας Αρχαιολογίας, ΦΕΚ 96Δ/2004 |
 | `koinotites.json` | Δημοτικές Κοινότητες |
 
-Το `scripts/build_data.py` παράγει τα `data/places.geojson`, `data/zones.geojson` και `data/communities.geojson` που διαβάζει η εφαρμογή.
+Το `scripts/build_data.py` παράγει τα `data/places.geojson`, `data/zones.geojson`, `data/communities.geojson` και `data/municipality.geojson` που διαβάζει η εφαρμογή. Τα όρια του Δήμου βγαίνουν από την ένωση των 7 κοινοτήτων.
 
 ```bash
 python3 scripts/build_data.py

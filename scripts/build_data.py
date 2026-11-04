@@ -13,6 +13,7 @@ Outputs
   data/places.geojson       every point, tagged with the zones it falls in
   data/zones.geojson        the three zones in WGS84
   data/communities.geojson  the 7 communities in WGS84, with a label point each
+  data/municipality.geojson the outer boundary of the Municipality (union of the communities)
 
 No dependencies. Run from the repo root:
 
@@ -29,6 +30,7 @@ RAWDIR = ROOT / "data" / "raw"
 OUT = ROOT / "data" / "places.geojson"
 ZONES_OUT = ROOT / "data" / "zones.geojson"
 COMMUNITIES_OUT = ROOT / "data" / "communities.geojson"
+MUNICIPALITY_OUT = ROOT / "data" / "municipality.geojson"
 
 # Zones: raw file, id, Greek name, English name, outline colour, source note
 ZONES = [
@@ -220,6 +222,55 @@ def build_communities():
     return comms
 
 
+def build_municipality(comms):
+    """Outer boundary of the Municipality: the community edges that are not shared.
+
+    Neighbouring communities share exact vertices, so every inner edge appears twice
+    and drops out; the edges left over chain into the outer ring(s).
+    """
+    from collections import Counter, defaultdict
+    key = lambda pt: (round(pt[0], 2), round(pt[1], 2))
+    edges = Counter()
+    for _, polys in comms:
+        for poly in polys:
+            for ring in poly:
+                pts = [key(pt) for pt in ring]
+                for a, b in zip(pts, pts[1:]):
+                    if a != b:
+                        edges[frozenset((a, b))] += 1
+    adj = defaultdict(list)
+    for e, n in edges.items():
+        if n == 1:
+            a, b = tuple(e)
+            adj[a].append(b)
+            adj[b].append(a)
+    rings, seen = [], set()
+    for start in adj:
+        if start in seen:
+            continue
+        ring, prev, cur = [start], None, start
+        seen.add(start)
+        while True:
+            nxt = [n for n in adj[cur] if n != prev and (n not in seen or (n == start and len(ring) > 2))]
+            if not nxt:
+                break
+            prev, cur = cur, nxt[0]
+            ring.append(cur)
+            if cur == start:
+                break
+            seen.add(cur)
+        if len(ring) > 3 and ring[0] == ring[-1]:
+            rings.append(ring)
+    rings.sort(key=ring_area, reverse=True)
+    area = sum(ring_area(r) for r in rings) / 1e6
+    write(MUNICIPALITY_OUT, [{
+        "type": "Feature",
+        "id": "athens",
+        "geometry": {"type": "MultiPolygon", "coordinates": [[[wgs(x, y) for x, y in r]] for r in rings]},
+        "properties": {"name": "Δήμος Αθηναίων", "name_en": "Municipality of Athens", "area_km2": round(area, 2)},
+    }], f"municipality ring(s), {area:.2f} km²")
+
+
 def community_of(x, y, comms):
     return next((no for no, polys in comms if in_polygons(x, y, polys)), None)
 
@@ -309,6 +360,7 @@ def check_communities(places, comms):
 def main():
     zones = build_zones()
     comms = build_communities()
+    build_municipality(comms)
     places = build_toponymy(zones) + build_venues(zones)
     places.sort(key=lambda f: f["id"])
     check_communities(places, comms)

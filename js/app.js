@@ -19,6 +19,7 @@
       layers: "Επίπεδα",
       layersHint: "Όρια στον χάρτη",
       communitiesLayer: "Δημοτικές κοινότητες",
+      municipalityLayer: "Όρια Δήμου Αθηναίων",
       community: (n) => `${n}η Δημοτική Κοινότητα`,
       communityShort: (n) => `${n}η Κοινότητα`,
       near: "Κοντά μου",
@@ -64,6 +65,7 @@
       layers: "Layers",
       layersHint: "Boundaries on the map",
       communitiesLayer: "Municipal communities",
+      municipalityLayer: "City of Athens boundary",
       community: (n) => `${ordinal(n)} Municipal Community`,
       communityShort: (n) => `${ordinal(n)} Community`,
       near: "Near me",
@@ -140,6 +142,22 @@
     maxZoom: 19,
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
+  // Municipality: a soft veil outside the boundary (under everything) and a strong
+  // outline (over the other boundaries, under the markers)
+  map.createPane("muniMask").style.zIndex = 380;
+  map.createPane("muniLine").style.zIndex = 410; // above the community lines it coincides with
+  const muniLayer = L.layerGroup().addTo(map);
+  const MUNI_COLOR = "#1b3f8b";
+  let muni = null;
+  function styleMuni() {
+    if (!muni) return;
+    const show = !hidden.has("municipality");
+    muni.forEach((l) => {
+      if (show && !muniLayer.hasLayer(l)) muniLayer.addLayer(l);
+      if (!show && muniLayer.hasLayer(l)) muniLayer.removeLayer(l);
+    });
+  }
+
   // Community numbers sit above the markers so they are never hidden
   map.createPane("commLabels").style.zIndex = 640;
   const commLayer = L.layerGroup().addTo(map);
@@ -196,6 +214,7 @@
       z.layer.setTooltipContent(zoneLabel(z));
     });
     styleComms();
+    styleMuni();
     buildLayersBox();
   }
 
@@ -233,12 +252,22 @@
         </svg>
         <span>${esc(s.communitiesLayer)}</span>
       </label>` : "";
+    const muniRow = muni ? `
+      <label class="lyr">
+        <input type="checkbox" data-layer="municipality"${hidden.has("municipality") ? "" : " checked"}>
+        <svg class="swatch" viewBox="0 0 28 14" aria-hidden="true">
+          <rect x="0" y="0" width="28" height="14" fill="#1d2433" fill-opacity=".2"/>
+          <rect x="4" y="3" width="20" height="8" rx="1.5" fill="#fff"/>
+          <rect x="4" y="3" width="20" height="8" rx="1.5" fill="none" stroke="${MUNI_COLOR}" stroke-width="2.4"/>
+        </svg>
+        <span>${esc(s.municipalityLayer)}</span>
+      </label>` : "";
     el.innerHTML = `
       <button type="button" class="lyr-toggle" aria-expanded="${layersOpen}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
         <span>${esc(s.layers)}</span>
       </button>
-      <div class="lyr-list"${layersOpen ? "" : " hidden"}><p class="lyr-hint">${esc(s.layersHint)}</p>${commRow}${rows}</div>`;
+      <div class="lyr-list"${layersOpen ? "" : " hidden"}><p class="lyr-hint">${esc(s.layersHint)}</p>${muniRow}${commRow}${rows}</div>`;
   }
   layersBox.getContainer().addEventListener("click", (e) => {
     if (e.target.closest(".lyr-toggle")) { layersOpen = !layersOpen; buildLayersBox(); }
@@ -265,6 +294,7 @@
         radius: p.cat === "square" ? 5.5 : 7,
         color: "#fff", weight: 2,
         fillColor: COLORS[p.cat], fillOpacity: 1,
+        pane: "markerPane", // above every boundary line
       });
     }
     m.on("click", () => select(p.id, { fly: false }));
@@ -547,8 +577,24 @@
   const byId = new Map();
   const getJSON = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
   const optional = (url) => getJSON(url).catch(() => ({ features: [] }));
-  Promise.all([getJSON("data/places.geojson"), optional("data/zones.geojson"), optional("data/communities.geojson")])
-    .then(([geo, zoneGeo, commGeo]) => {
+  Promise.all([getJSON("data/places.geojson"), optional("data/zones.geojson"), optional("data/communities.geojson"), optional("data/municipality.geojson")])
+    .then(([geo, zoneGeo, commGeo, muniGeo]) => {
+      const mf = muniGeo.features[0];
+      if (mf) {
+        const rings = mf.geometry.coordinates.map((poly) => poly[0].map(([lon, lat]) => [lat, lon]));
+        // The veil is a frame around Athens with the city as a hole. It is drawn
+        // unclipped: Leaflet's clipping drops the hole when the view sits inside it.
+        const bb = L.latLngBounds(rings.flat());
+        const frame = bb.pad(4);
+        const outer = [frame.getNorthWest(), frame.getNorthEast(), frame.getSouthEast(), frame.getSouthWest()];
+        map.setMaxBounds(bb.pad(1.5));
+        muni = [
+          L.polygon([outer, ...rings], { pane: "muniMask", stroke: false, fillColor: "#1d2433", fillOpacity: 0.2, interactive: false, noClip: true }),
+          L.polygon(rings, { pane: "muniLine", color: "#fff", weight: 10, opacity: 0.95, fill: false, interactive: false }),
+          L.polygon(rings, { pane: "muniLine", color: MUNI_COLOR, weight: 5, opacity: 1, fill: false, lineJoin: "round", interactive: false }),
+        ];
+        muni.forEach((l) => l.addTo(muniLayer));
+      }
       comms = commGeo.features.map((f) => {
         const c = { no: f.properties.no };
         c.casing = L.geoJSON(f, { style: commCasing(false), interactive: false }).addTo(commLayer);
@@ -577,7 +623,7 @@
         byId.set(p.id, p);
         return p;
       });
-      map.fitBounds(L.latLngBounds(places.map((p) => [p.lat, p.lon])).pad(0.03));
+      map.fitBounds(muni ? muni[2].getBounds() : L.latLngBounds(places.map((p) => [p.lat, p.lon])), { padding: [16, 16] });
       applyLang();
       const m = location.hash.match(/^#p-(\d+)$/);
       if (m) select(+m[1]);
