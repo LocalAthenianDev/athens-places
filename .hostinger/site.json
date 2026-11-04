@@ -1,0 +1,7 @@
+{
+  "domain": "places.athensapps.gr",
+  "test_domain": "places-test.athensapps.gr",
+  "username": "u688987252",
+  "type": "static",
+  "branches": { "main": "places.athensapps.gr", "test": "places-test.athensapps.gr" }
+}
