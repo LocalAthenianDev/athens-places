@@ -11,8 +11,11 @@
       searchLabel: "Αναζήτηση τόπου",
       searchPh: "Αναζήτηση, π.χ. Κολωνάκι",
       catsLegend: "Κατηγορίες",
-      communityLabel: "Δημοτική κοινότητα",
-      allCommunities: "Όλες οι κοινότητες",
+      communityLabel: "Περιοχή",
+      allCommunities: "Όλος ο Δήμος",
+      communitiesGroup: "Δημοτικές κοινότητες",
+      zonesGroup: "Ιστορικές ζώνες",
+      zoneDt: "Ζώνη",
       community: (n) => `${n}η Δημοτική Κοινότητα`,
       communityShort: (n) => `${n}η Κοινότητα`,
       near: "Κοντά μου",
@@ -22,8 +25,12 @@
       byDistance: "ταξινόμηση κατά απόσταση",
       empty: "Κανένας τόπος δεν ταιριάζει στα φίλτρα.",
       reset: "Καθαρισμός φίλτρων",
-      cats: { square: "Πλατείες", landmark: "Τοπόσημα", monument: "Μνημεία", green: "Πράσινο & ελεύθεροι χώροι" },
-      cat1: { square: "Πλατεία", landmark: "Τοπόσημο", monument: "Μνημείο", green: "Χώρος πρασίνου" },
+      cats: { square: "Πλατείες", landmark: "Τοπόσημα", monument: "Μνημεία", culture: "Χώροι πολιτισμού", green: "Πράσινο & ελεύθεροι χώροι" },
+      cat1: { square: "Πλατεία", landmark: "Τοπόσημο", monument: "Μνημείο", culture: "Χώρος πολιτισμού", green: "Χώρος πρασίνου" },
+      venue: { museum: "Μουσείο", library: "Βιβλιοθήκη", theatre: "Θέατρο", centre: "Πολιτιστικό κέντρο", gallery: "Πινακοθήκη", cinema: "Κινηματογράφος" },
+      address: "Διεύθυνση",
+      operator: "Φορέας",
+      website: "Ιστότοπος",
       district: "Συνοικία",
       communityDt: "Κοινότητα",
       greenNo: "Αρ. χώρου",
@@ -34,7 +41,7 @@
       aka: "και",
       langBtn: "EN",
       langAria: "Switch to English",
-      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a>. Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
+      source: 'Δεδομένα από την <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">Πύλη Ανοιχτών Δεδομένων του Δήμου Αθηναίων</a> (τοπωνυμία, χώροι πολιτισμού, Ιστορικό Κέντρο, Άξονας Πειραιώς, Τομέας Αρχαιολογίας ΦΕΚ 96Δ/2004). Χάρτης © συντελεστές <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.',
       about: 'Ανεξάρτητη εφαρμογή ανοιχτού κώδικα, όχι επίσημη εφαρμογή του Δήμου. Μέρος του <a href="https://athensapps.gr/">athensapps.gr</a>, κώδικας στο <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Τόποι της Αθήνας | Athens Places",
     },
@@ -46,8 +53,11 @@
       searchLabel: "Search places",
       searchPh: "Search, e.g. Kolonaki",
       catsLegend: "Categories",
-      communityLabel: "Municipal community",
-      allCommunities: "All communities",
+      communityLabel: "Area",
+      allCommunities: "Whole municipality",
+      communitiesGroup: "Municipal communities",
+      zonesGroup: "Historic zones",
+      zoneDt: "Zone",
       community: (n) => `${ordinal(n)} Municipal Community`,
       communityShort: (n) => `${ordinal(n)} Community`,
       near: "Near me",
@@ -57,8 +67,12 @@
       byDistance: "sorted by distance",
       empty: "No place matches these filters.",
       reset: "Clear filters",
-      cats: { square: "Squares", landmark: "Landmarks", monument: "Monuments", green: "Green & open spaces" },
-      cat1: { square: "Square", landmark: "Landmark", monument: "Monument", green: "Green space" },
+      cats: { square: "Squares", landmark: "Landmarks", monument: "Monuments", culture: "Cultural venues", green: "Green & open spaces" },
+      cat1: { square: "Square", landmark: "Landmark", monument: "Monument", culture: "Cultural venue", green: "Green space" },
+      venue: { museum: "Museum", library: "Library", theatre: "Theatre", centre: "Cultural centre", gallery: "Gallery", cinema: "Cinema" },
+      address: "Address",
+      operator: "Operator",
+      website: "Website",
       district: "District",
       communityDt: "Community",
       greenNo: "Space no.",
@@ -69,7 +83,7 @@
       aka: "aka",
       langBtn: "ΕΛ",
       langAria: "Αλλαγή σε ελληνικά",
-      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a>. Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
+      source: 'Data from the <a href="https://opendata.cityofathens.gr/dataset/gis-athens-cf2c2f7a-88c0-11ec-8393-0242ac120006">City of Athens Open Data Portal</a> (toponymy, cultural venues, Historic Centre, Piraeus Street axis, Archaeology Sector ΦΕΚ 96Δ/2004). Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.',
       about: 'An independent open source app, not an official City of Athens app. Part of <a href="https://athensapps.gr/">athensapps.gr</a>, code on <a href="https://github.com/LocalAthenianDev/athens-places">GitHub</a>.',
       docTitle: "Athens Places | Τόποι της Αθήνας",
     },
@@ -79,9 +93,9 @@
     return `${n}${s}`;
   }
 
-  const CATS = ["square", "landmark", "monument", "green"];
+  const CATS = ["square", "landmark", "monument", "culture", "green"];
   const COLORS = {
-    square: "#2f6fd6", landmark: "#7d4cb8", monument: "#a3441f", green: "#2e7d4f",
+    square: "#2f6fd6", landmark: "#7d4cb8", monument: "#a3441f", culture: "#c0307a", green: "#2e7d4f",
   };
 
   /* ---------- Small helpers ---------- */
@@ -107,7 +121,7 @@
   /* ---------- State ---------- */
   const params = new URLSearchParams(location.search);
   let lang = params.get("lang") === "en" || params.get("lang") === "el" ? params.get("lang") : (store.get("places-lang") || "el");
-  const state = { q: "", cats: new Set(CATS), community: "", me: null, current: null };
+  const state = { q: "", cats: new Set(CATS), area: "", me: null, current: null };
   let places = [];
   const t = () => T[lang];
 
@@ -120,7 +134,24 @@
     maxZoom: 19,
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
+  const zonesLayer = L.layerGroup().addTo(map);
   const layer = L.layerGroup().addTo(map);
+  let zones = [];
+  const zoneStyle = (z, on) => ({
+    color: z.color, weight: on ? 3 : 2, dashArray: z.id === "archaeology" ? "2 5" : "7 5",
+    fillColor: z.color, fillOpacity: on ? 0.12 : 0.03, lineCap: "round",
+  });
+  const zoneName = (z) => (lang === "el" ? z.name : z.name_en);
+  const zoneLabel = (z) => zoneName(z) + (z.note ? ` (${z.note})` : "");
+  const catLabel = (p) => (p.venue ? t().venue[p.venue] : t().cat1[p.cat]);
+  function styleZones() {
+    zones.forEach((z) => {
+      const on = state.area === `z:${z.id}`;
+      z.layer.setStyle(zoneStyle(z, on));
+      if (on) z.layer.bringToFront();
+      z.layer.setTooltipContent(zoneLabel(z));
+    });
+  }
   let meMarker = null;
 
   function makeMarker(p) {
@@ -150,24 +181,28 @@
     const s = t();
     const nameMain = lang === "el" ? p.name : (p.name_en || p.name);
     const nameAlt = lang === "el" ? p.name_en : p.name;
-    const rows = [
-      [s.district, p.district],
-      [s.communityDt, s.communityShort(p.community)],
-    ];
+    const rows = [];
+    if (p.address) rows.push([s.address, p.address]);
+    if (p.district) rows.push([s.district, p.district]);
+    rows.push([s.communityDt, s.communityShort(p.community)]);
+    const zs = zones.filter((x) => p.zones.includes(x.id));
+    if (zs.length) rows.push([s.zoneDt, zs.map(zoneLabel).join(", ")]);
     if (p.green_no) rows.push([s.greenNo, p.green_no]);
+    if (p.operator) rows.push([s.operator, p.operator]);
     if (p.aka) rows.unshift([s.aka, p.aka]);
     const osm = `https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lon}#map=18/${p.lat}/${p.lon}`;
     const dir = `https://www.openstreetmap.org/directions?route=%3B${p.lat}%2C${p.lon}`;
     const dist = state.me ? ` <span class="item-dist">${fmtDist(p.dist)}</span>` : "";
     return `
       <div class="pop-sign">
-        <span class="pop-name">${esc(nameMain)}</span>
+        <span class="pop-name" lang="${nameMain === p.name ? "el" : "en"}">${esc(nameMain)}</span>
         ${nameAlt ? `<span class="pop-en">${esc(nameAlt)}</span>` : ""}
       </div>
       <div class="pop-body">
-        <span class="pop-cat" style="--c:${COLORS[p.cat]}"><i></i>${esc(s.cat1[p.cat])}</span>${dist}
+        <span class="pop-cat" style="--c:${COLORS[p.cat]}"><i></i>${esc(catLabel(p))}</span>${dist}
         <dl>${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
         <div class="pop-links">
+          ${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(s.website)}</a>` : ""}
           <a href="${dir}" target="_blank" rel="noopener">${esc(s.directions)}</a>
           <a href="${osm}" target="_blank" rel="noopener">${esc(s.osm)}</a>
           <button type="button" data-copy="${p.id}">${esc(s.copy)}</button>
@@ -178,12 +213,18 @@
   /* ---------- Filtering & list ---------- */
   const collator = () => new Intl.Collator(lang, { sensitivity: "base", numeric: true });
 
+  function matchesArea(p) {
+    if (!state.area) return true;
+    if (state.area.startsWith("z:")) return p.zones.includes(state.area.slice(2));
+    return p.community === +state.area;
+  }
+
   function filtered() {
     const q = norm(state.q);
     const words = q ? q.split(" ") : [];
     let out = places.filter((p) =>
       state.cats.has(p.cat) &&
-      (!state.community || p.community === +state.community) &&
+      matchesArea(p) &&
       words.every((w) => p.search.includes(w))
     );
     if (state.me) {
@@ -220,9 +261,9 @@
       const mark = p.green_no
         ? `<span class="mark num" style="--c:${COLORS.green};background:var(--c)" aria-hidden="true">${p.green_no}</span>`
         : `<span class="mark" style="--c:${COLORS[p.cat]}" aria-hidden="true"></span>`;
-      const meta = `${s.cat1[p.cat]}, ${p.district}`;
+      const meta = `${catLabel(p)}, ${p.district || p.street}`;
       return `<li><button class="item" type="button" data-id="${p.id}"${p.id === state.current ? ' aria-current="true"' : ""}>
-        ${mark}<span class="item-name">${esc(name)}</span>${state.me ? `<span class="item-dist">${fmtDist(p.dist)}</span>` : "<span></span>"}
+        ${mark}<span class="item-name"${lang === "en" && !p.name_en ? ' lang="el"' : ""}>${esc(name)}</span>${state.me ? `<span class="item-dist">${fmtDist(p.dist)}</span>` : "<span></span>"}
         <span class="item-meta">${esc(meta)}</span></button></li>`;
     }).join("");
   }
@@ -260,7 +301,8 @@
   }
 
   function resetFilters() {
-    state.q = ""; state.community = ""; state.cats = new Set(CATS);
+    state.q = ""; state.area = ""; state.cats = new Set(CATS);
+    styleZones();
     $("#q").value = ""; $("#community").value = "";
     document.querySelectorAll("#cats input").forEach((i) => { i.checked = true; });
     render();
@@ -280,9 +322,15 @@
   function buildCommunities() {
     const s = t();
     const sel = $("#community");
+    const zoneCount = (id) => places.filter((p) => p.zones.includes(id)).length;
     sel.innerHTML = `<option value="">${esc(s.allCommunities)}</option>` +
-      [1, 2, 3, 4, 5, 6, 7].map((n) => `<option value="${n}">${esc(s.community(n))}</option>`).join("");
-    sel.value = state.community;
+      `<optgroup label="${esc(s.communitiesGroup)}">` +
+      [1, 2, 3, 4, 5, 6, 7].map((n) => `<option value="${n}">${esc(s.community(n))}</option>`).join("") +
+      `</optgroup>` +
+      (zones.length ? `<optgroup label="${esc(s.zonesGroup)}">` +
+        zones.slice().reverse().map((z) => `<option value="z:${z.id}">${esc(zoneName(z))} (${zoneCount(z.id)})</option>`).join("") +
+        `</optgroup>` : "");
+    sel.value = state.area;
   }
 
   function applyLang() {
@@ -296,6 +344,7 @@
     $("#langBtn").setAttribute("aria-label", s.langAria);
     buildCats();
     buildCommunities();
+    styleZones();
     render();
     if (state.current) {
       const p = byId.get(state.current);
@@ -309,11 +358,27 @@
     render();
   });
   $("#community").addEventListener("change", (e) => {
-    state.community = e.target.value;
-    render();
-    const list = filtered();
-    if (state.community && list.length) map.flyToBounds(L.latLngBounds(list.map((p) => [p.lat, p.lon])).pad(0.15), { duration: 0.6 });
+    setArea(e.target.value);
   });
+  // Keep fitted areas clear of the bottom sheet on phones
+  const fitOpts = (extra = {}) => ({
+    duration: matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.6,
+    paddingTopLeft: [20, 20],
+    paddingBottomRight: [20, isMobile() ? panel.offsetHeight + 20 : 20],
+    ...extra,
+  });
+
+  function setArea(value) {
+    state.area = value;
+    $("#community").value = value;
+    styleZones();
+    render();
+    const z = value.startsWith("z:") && zones.find((x) => `z:${x.id}` === value);
+    const list = filtered();
+    if (z) map.flyToBounds(z.layer.getBounds(), fitOpts());
+    else if (value && list.length) map.flyToBounds(L.latLngBounds(list.map((p) => [p.lat, p.lon])), fitOpts());
+  }
+
   $("#list").addEventListener("click", (e) => {
     const btn = e.target.closest(".item");
     if (btn) select(+btn.dataset.id, { scroll: false });
@@ -353,7 +418,7 @@
       meMarker = L.circleMarker(state.me, { radius: 8, color: "#fff", weight: 3, fillColor: "#f2b705", fillOpacity: 1 }).addTo(map);
       render();
       const nearest = filtered().slice(0, 5).map((p) => [p.lat, p.lon]);
-      map.flyToBounds(L.latLngBounds([state.me, ...nearest]).pad(0.25), { duration: 0.6, maxZoom: 17 });
+      map.flyToBounds(L.latLngBounds([state.me, ...nearest]), fitOpts({ maxZoom: 17 }));
     }, () => {
       nearBtn.disabled = false;
       nearBtn.querySelector("span").textContent = t().near;
@@ -380,12 +445,20 @@
 
   /* ---------- Boot ---------- */
   const byId = new Map();
-  fetch("data/places.geojson")
-    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((geo) => {
+  const getJSON = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  Promise.all([getJSON("data/places.geojson"), getJSON("data/zones.geojson").catch(() => ({ features: [] }))])
+    .then(([geo, zoneGeo]) => {
+      zones = zoneGeo.features.map((f) => {
+        const z = { id: f.id, ...f.properties };
+        z.layer = L.geoJSON(f, { style: zoneStyle(z, false) })
+          .bindTooltip(zoneLabel(z), { sticky: true, className: "zone-tip" })
+          .on("click", () => setArea(state.area === `z:${z.id}` ? "" : `z:${z.id}`))
+          .addTo(zonesLayer);
+        return z;
+      });
       places = geo.features.map((f) => {
         const p = { id: f.id, ...f.properties, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] };
-        p.search = norm([p.name, p.aka, p.name_en, p.district, p.green_no ? `#${p.green_no}` : ""].join(" "));
+        p.search = norm([p.name, p.aka, p.name_en, p.district, p.address, p.green_no ? `#${p.green_no}` : ""].join(" "));
         p.sortEl = p.name.replace(/^ΠΛΑΤΕΙΑ /, "");
         p.marker = makeMarker(p);
         byId.set(p.id, p);

@@ -1,0 +1,615 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "politismos24_f.1",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476224.74761663, 4202521.54245528]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 1,
+        "fid": 39,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Αγγελικής Χατζημιχάλη 6, Τ.Κ. 105 58",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/moyseia/moyseio-laikis-texnis-kai-paradosis",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Μουσείο, Λαϊκής Τέχνης και Παράδοσης",
+        "label": "Μουσείο, Λαϊκής Τέχνης - και Παράδοσης",
+        "diefth": "Αγγελικής Χατζημιχάλη 6",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.2",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [479110.91445024, 4205111.85262296]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 2,
+        "fid": 42,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Λάμψα & Τριφυλίας, Τ.Κ. 115 24",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/vivliothikes/item/paidiki-efiviki-vivliothiki",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Παιδική και Εφηβική Βιβλιοθήκη",
+        "label": "Παιδική - και Εφηβική Βιβλιοθήκη",
+        "diefth": "Λάμψα & Τριφυλίας",
+        "dk": "7η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.3",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [479108.73504279, 4205124.32431902]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 3,
+        "fid": 43,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Λάμψα & Τριφυλίας, Τ.Κ. 115 24",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/vivliothikes/item/vrefiki-nipiaki-vivliothiki",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Βρεφική  και Νηπιακή Βιβλιοθήκη",
+        "label": "Βρεφική -  και Νηπιακή Βιβλιοθήκη",
+        "diefth": "Λάμψα & Τριφυλίας",
+        "dk": "7η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.4",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474793.43537089, 4203141.84078082]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 4,
+        "fid": 44,
+        "type": "ΤΕΧΝΟΠΟΛΙΣ",
+        "tax_diefth": "Πειραιώς 100, Τ.Κ. 118 54 Αθήνα",
+        "hm_egrafis": "2017-06-06T00:00:00Z",
+        "link_": "https://athens-technopolis.gr/index.php/el/",
+        "foreas": "Τεχνόπολις-Γκάζι Ανώνυμη Εταιρεία ΟΤΑ Προστασίας και Ανάδειξης Βιομηχανικού Αρχαιολογικού Πάρκου Αθηνών",
+        "name": "Τεχνόπολις-Γκάζι Ανώνυμη Εταιρεία ΟΤΑ",
+        "label": "Τεχνόπολις-Γκάζι Ανώνυμη Εταιρεία ΟΤΑ",
+        "diefth": "Πειραιώς 100",
+        "dk": "3η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.5",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474884.21006145, 4205085.32749193]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 5,
+        "fid": 55,
+        "type": "ΘΕΑΤΡΟ",
+        "tax_diefth": "Ιωαννίνων & Καπανέως, Τ.Κ. 104 44",
+        "hm_egrafis": "2019-01-18T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/theatra/item/ypaithrio-theatro-kolonoy",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Υπαίθριο Θέατρο Κολωνού",
+        "label": "Υπαίθριο Θέατρο - Κολωνού",
+        "diefth": "Ιωαννίνων & Καπανέως",
+        "dk": "4η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.6",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476432.78845559, 4203616.56112407]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 6,
+        "fid": 60,
+        "type": "ΘΕΑΤΡΟ",
+        "tax_diefth": "Ακαδημίας 59, Τ.Κ. 106 79",
+        "hm_egrafis": "2019-01-15T00:00:00Z",
+        "link_": "https://www.opanda.gr/",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Ολύμπια Δημοτικό Μουσικό Θέατρο «Μαρία Κάλλας»",
+        "label": "Ολύμπια Δημοτικό Μουσικό Θέατρο - «Μαρία Κάλλας»",
+        "diefth": "Ακαδημίας 59",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.7",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475383.81685447, 4204814.87057493]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 7,
+        "fid": 65,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Δομοκού 2, Σταθμός Λαρίσης, Τ.Κ. 104 40",
+        "hm_egrafis": "2017-06-08T00:00:00Z",
+        "link_": "https://www.cityofathens.gr/who/dhmotikh-vivliothiki/",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Κεντρική Δημοτική Βιβλιοθήκη και Μουσική βιβλιοθηκη",
+        "label": "Κεντρική Δημοτική Βιβλιοθήκη - και Μουσική βιβλιοθηκη",
+        "diefth": "Δομοκού 2",
+        "dk": "6η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.8",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474758.6327299, 4202922.44343048]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 8,
+        "fid": 66,
+        "type": "ΠΟΛΙΤΙΣΤΙΚΟ ΚΕΝΤΡΟ",
+        "tax_diefth": "Ηρακλειδών 66 & Θεσσαλονίκης Θησείο, Τ.Κ. 118 51",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/politistiko-kentro-melina",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Πολιτιστικό Κέντρο \"Μελίνα\"",
+        "label": "Πολιτιστικό Κέντρο - \"Μελίνα\"",
+        "diefth": "Ηρακλειδών 66 & Θεσσαλονίκης Θησείο",
+        "dk": "3η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.9",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [478770.09574305, 4204691.17212517]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 9,
+        "fid": 68,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Πανόρμου 59, Αθήνα, Τ.Κ. 115 24",
+        "hm_egrafis": "2017-06-08T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/bibliothikes/bibliothiki-ioanneioy-pneymatikoy-kentroy",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Βιβλιοθήκη Ιωάννειου Πνευματικού Κέντρου",
+        "label": "Βιβλιοθήκη Ιωάννειου - Πνευματικού Κέντρου",
+        "diefth": "Πανόρμου 59",
+        "dk": "7η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.10",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475138.3187356, 4200506.01825012]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 10,
+        "fid": 87,
+        "type": "ΘΕΑΤΡΟ",
+        "tax_diefth": "Τιμοκρέοντος 6Α, Ν. Κόσμος, Τ.Κ. 117 45",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/node/19708",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Πολυχώρος Άννα και Μαρία Καλουτά",
+        "label": "Πολυχώρος Άννα - και Μαρία Καλουτά",
+        "diefth": "Τιμοκρέοντος 6Α",
+        "dk": "2η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.11",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [478087.65740085, 4203429.72115169]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 11,
+        "fid": 88,
+        "type": "ΠΟΛΙΤΙΣΤΙΚΟ ΚΕΝΤΡΟ",
+        "tax_diefth": "Βασ. Σοφίας Πάρκο Ελευθερίας, Τ.Κ. 115 21",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/kentro-texnon-parko-eleytherias",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Κέντρο Τεχνών Πάρκο Ελευθερίας - Β. Σοφίας",
+        "label": "Κέντρο Τεχνών - Πάρκο Ελευθερίας - Β. Σοφίας",
+        "diefth": "Βασ. Σοφίας Πάρκο Ελευθερίας",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.12",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476603.76042965, 4203507.13849762]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 12,
+        "fid": 114,
+        "type": "ΠΟΛΙΤΙΣΤΙΚΟ ΚΕΝΤΡΟ",
+        "tax_diefth": "Ακαδημίας 50, Τ.Κ. 106 79",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/pneymatiko-kentro",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Πνευματικό Κέντρο",
+        "label": "Πνευματικό Κέντρο",
+        "diefth": "Ακαδημίας 50",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.13",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474775.13609502, 4202941.59499929]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 13,
+        "fid": 122,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Ηρακλειδών 66 & Θεσσαλονίκης Θησείο, Τ.Κ. 118 51",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/moyseia/moyseio-theatro-skion-xaridimos",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Μουσείο, Θέατρο Σκιών Χαρίδημος",
+        "label": "Μουσείο, Θέατρο Σκιών Χαρίδημος",
+        "diefth": "Ηρακλειδών 66 & Θεσσαλονίκης Θησείο",
+        "dk": "3η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.14",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474703.91712979, 4203061.57392135]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 14,
+        "fid": 130,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Πειραιώς 100, Τ.Κ. 118 54 Αθήνα",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.technopolis-athens.com/web/guest/museum",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Βιομηχανικό Μουσείο Φωταερίου",
+        "label": "Βιομηχανικό Μουσείο - Φωταερίου",
+        "diefth": "Πειραιώς 100",
+        "dk": "3η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.15",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476818.73250601, 4205764.76870368]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 15,
+        "fid": 170,
+        "type": "ΚΙΝΗΜΑΤΟΓΡΑΦΟΣ",
+        "tax_diefth": "Tενέδου 34, Κυψέλη, Τ.Κ. 113 61",
+        "hm_egrafis": "2019-01-15T00:00:00Z",
+        "link_": "https://www.cityofathens.gr/node/19711",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Δημοτικός Κινηματογράφος ΣΤΕΛΛΑ",
+        "label": "Δημοτικός Κινηματογράφος - ΣΤΕΛΛΑ",
+        "diefth": "Tενέδου 34",
+        "dk": "6η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.16",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [474146.4468143, 4204957.04779582]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 16,
+        "fid": 134,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Μοναστηρίου και Κρέοντος 1, Τ.Κ. 104 42",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/ipodomes-opanda/item/psifiako-mouseio-platonos",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Ψηφιακό Μουσείο, Ακαδημίας Πλάτωνος",
+        "label": "Ψηφιακό Μουσείο, Ακαδημίας Πλάτωνος",
+        "diefth": "Μοναστηρίου και Κρέοντος 1",
+        "dk": "4η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.17",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475207.56860971, 4203654.19846312]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 17,
+        "fid": 144,
+        "type": "ΠΙΝΑΚΟΘΗΚΗ",
+        "tax_diefth": "Λεωνιδίου & Μυλλέρου Μεταξουργείο, Τ.Κ. 104 36",
+        "hm_egrafis": "2017-06-08T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/dimotiki-pinakothiki",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Νέα Δημοτική Πινακοθήκη",
+        "label": "Νέα Δημοτική Πινακοθήκη",
+        "diefth": "Λεωνιδίου & Μυλλέρου Μεταξουργείο",
+        "dk": "3η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.18",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475387.37807262, 4203446.04126236]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 18,
+        "fid": 147,
+        "type": "ΠΙΝΑΚΟΘΗΚΗ",
+        "tax_diefth": "Πειραιώς 51, Πλατεία Κουμουνδούρου, Τ.Κ. 105 53",
+        "hm_egrafis": "2017-06-08T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/pinakothikes/item/pinakothiki-peiraios",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Παλαιά Δημοτική Πινακοθήκη",
+        "label": "Παλαιά Δημοτική Πινακοθήκη",
+        "diefth": "Πειραιώς 51",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.19",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477331.15803935, 4202599.9775658]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 19,
+        "fid": 150,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Ρηγίλλης & Βασ. Γεωργίου Β΄ 17-19, Τ.Κ. 106 75",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "https://www.hcm.gr/",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Ελληνικό Παιδικό Μουσείο",
+        "label": "Ελληνικό Παιδικό Μουσείο",
+        "diefth": "Ρηγίλλης & Βασ. Γεωργίου Β΄ 17-19",
+        "dk": "2η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.20",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475421.90626034, 4204782.71005768]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 20,
+        "fid": 151,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Στ. Λαρίσης, Τ.Κ. 104 39",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/vivliothikes/item/paidiki-vivliothiki",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Παιδική Βιβλιοθήκη (Στ. Λαρίσης)",
+        "label": "Παιδική Βιβλιοθήκη (Στ. Λαρίσης)",
+        "diefth": "Στ. Λαρίσης",
+        "dk": "6η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.21",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [475022.27399037, 4205939.557888]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 21,
+        "fid": 168,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Δωδώνης 119 Σεπόλια, Τ.Κ. 144 43",
+        "hm_egrafis": "2017-06-12T00:00:00Z",
+        "link_": "http://www.cityofathens.gr/katoikoi/texnes-politismos/xoroi-politismoy/moyseia/moyseio-dodekanisiako-spiti",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Μουσείο, Δωδεκανησιακό Σπίτι Σεπόλια",
+        "label": "Μουσείο, Δωδεκανησιακό Σπίτι - Σεπόλια",
+        "diefth": "Δωδώνης 119 Σεπόλια",
+        "dk": "4η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.22",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476984.45839246, 4207169.74029279]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 22,
+        "fid": 177,
+        "type": "ΘΕΑΤΡΟ",
+        "tax_diefth": "Ταϋγέτου 60, Τ.Κ. 112 55",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/theatra/item/ypaithrio-theatro-gravas",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Υπαίθριο Θέατρο Γκράβας",
+        "label": "Υπαίθριο Θέατρο Γκράβας",
+        "diefth": "Ταϋγέτου 60",
+        "dk": "5η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.23",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [478770.29409424, 4204649.50448677]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 23,
+        "fid": 18,
+        "type": "ΒΙΒΛΙΟΘΗΚΗ",
+        "tax_diefth": "Πανόρμου 59, Τ.Κ. 115 24",
+        "hm_egrafis": "2019-01-17T00:00:00Z",
+        "link_": "https://www.opanda.gr/index.php/vivliothikes/item/ioanneios-vivliothiki",
+        "foreas": "Οργανισμός Πολιτισμού, Αθλητισμού & Νεολαίας Δήμου Αθηναίων",
+        "name": "Ιωάννειος Βιβλιοθήκη",
+        "label": "Ιωάννειος Βιβλιοθήκη",
+        "diefth": "Πανόρμου 59",
+        "dk": "7η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.24",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [476206.40891226, 4202840.81240381]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 24,
+        "fid": 229,
+        "type": "ΜΟΥΣΕΙΟ",
+        "tax_diefth": "Μητροπόλεως 44, Τ.Κ. 105 63",
+        "hm_egrafis": "2024-03-22T00:00:00Z",
+        "link_": "https://mariacallasmuseum.gr/",
+        "foreas": "Τεχνόπολις-Γκάζι Ανώνυμη Εταιρεία ΟΤΑ Προστασίας και Ανάδειξης Βιομηχανικού Αρχαιολογικού Πάρκου Αθηνών",
+        "name": "Μουσείο Μαρία Κάλλας",
+        "label": "Μουσείο Μαρία Κάλλας",
+        "diefth": "Μητροπόλεως 44",
+        "dk": "1η ΔΚ"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "politismos24_f.25",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [477637.90754986, 4203786.99768993]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid_1": 25,
+        "fid": 230,
+        "type": "ΘΕΑΤΡΟ",
+        "tax_diefth": "Πειραιώς 100, Τ.Κ. 118 54 Αθήνα",
+        "hm_egrafis": "2024-03-22T00:00:00Z",
+        "link_": "https://athens-technopolis.gr/index.php/el/",
+        "foreas": "Τεχνόπολις-Γκάζι Ανώνυμη Εταιρεία ΟΤΑ Προστασίας και Ανάδειξης Βιομηχανικού Αρχαιολογικού Πάρκου Αθηνών",
+        "name": "Δημοτικό Θέατρο Λυκαβηττού",
+        "label": "Δημοτικό Θέατρο Λυκαβηττού",
+        "diefth": "Λυκαβηττός",
+        "dk": "1η ΔΚ"
+      }
+    }
+  ],
+  "totalFeatures": 25,
+  "numberMatched": 25,
+  "numberReturned": 25,
+  "timeStamp": "2026-11-04T21:21:51.262Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::2100"
+    }
+  }
+}
